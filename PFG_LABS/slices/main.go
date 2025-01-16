@@ -6,18 +6,22 @@ import (
 )
 
 // We will be modifying this later
-func CreateSlice() [] string{
+func CreateSlice() []string {
 	animalsSlice := []string{"dog", "cat", "monkey"}
 	return animalsSlice
 }
 
-func ModifySlice(slice []string)[]string {
+func ModifySlice(slice []string) []string {
+	if len(slice) < 3 {
+		return slice
+	}
+
 	slice[1] = "Tousif"
 	return slice
 }
 
-func PopSliceValue(slice []string)[]string {
-	slice = slices.Delete(slice,2,3)
+func PopSliceValue(slice []string) []string {
+	slice = slices.Delete(slice, 2, 3)
 	return slice
 }
 
@@ -26,7 +30,7 @@ func main() {
 	numbersArray := [3]int{}
 
 	numbersArray[0] = 1
-	fmt.Println("This is my array",numbersArray) // array default value of int is 0
+	fmt.Println("This is my array", numbersArray) // array default value of int is 0
 
 	numbersArray[1] = 2
 	numbersArray[2] = 3
@@ -34,17 +38,17 @@ func main() {
 	fmt.Println(numbersArray)
 
 	// Empty Slice
-	digitSlice := []int{1,2,3}
-	fmt.Println("This is my slice:",digitSlice)
+	digitSlice := []int{1, 2, 3}
+	fmt.Println("This is my slice:", digitSlice)
 
 	var realEmptySlice []int
-	
+
 	// Checking if the slices are empty
-	if digitSlice == nil{
+	if digitSlice == nil {
 		fmt.Println("Digit Slice is empty")
 	}
 
-	if realEmptySlice == nil{
+	if realEmptySlice == nil {
 		fmt.Println("Real Empty slice is empty")
 	}
 
@@ -52,7 +56,7 @@ func main() {
 	var lengthOfDigitSlice int
 	lengthOfDigitSlice = len(digitSlice)
 
-	fmt.Println("Length of the digit slice",lengthOfDigitSlice)
+	fmt.Println("Length of the digit slice", lengthOfDigitSlice)
 
 	myColors := []string{"red", "green", "yellow"}
 	fmt.Println(myColors[0])
@@ -61,13 +65,12 @@ func main() {
 	// Slicing a slice
 	myColors = append(myColors, "blue")
 	fmt.Println(myColors)
-	
-	// looping through a slice
-	
-	for index, color := range myColors{
-		fmt.Printf("Color: %s at position %d\n",color,index)
-	}
 
+	// looping through a slice
+
+	for index, color := range myColors {
+		fmt.Printf("Color: %s at position %d\n", color, index)
+	}
 
 	// popping a value from a slice
 
