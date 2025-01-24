@@ -5,7 +5,8 @@ import (
 )
 
 func main(){
-	fmt.Println("Welcome to Rock Paper Scissor Game");
+	fmt.Println("Welcome to Rock Paper Scissor Game")
+	fmt.Println("Game made by Tousif Tasrik")
 
 }	
 
